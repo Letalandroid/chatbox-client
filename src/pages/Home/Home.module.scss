@@ -150,6 +150,7 @@ body {
 			height: 68vh;
 			padding: 40px 20px;
 			overflow: auto;
+			scroll-behavior: smooth;
 
 
 			&::-webkit-scrollbar {

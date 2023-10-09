@@ -2,7 +2,7 @@ import Cookies from 'universal-cookie';
 import { ToastContainer, toast } from 'react-toastify';
 import jwt from 'jwt-decode';
 import styles from './Home.module.scss';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import Chat from '../../components/Chat/Chat';
 
 const Home = () => {
@@ -116,6 +116,15 @@ const Home = () => {
 		}
 	};
 
+	const chatParent = useRef(null);
+
+	useEffect(() => {
+		const domNode = chatParent.current;
+		if (domNode) {
+			domNode.scrollTop = domNode.scrollHeight;
+		}
+	});
+
 	return (
 		<>
 			<header className={styles.header}>
@@ -139,7 +148,7 @@ const Home = () => {
 			</header>
 			<div className={styles.container}>
 				<div className={styles.messages__container}>
-					<div className={styles.messages}>
+					<div ref={chatParent} className={styles.messages}>
 						{cargando ? (
 							<h2>Cargando chats...</h2>
 						) : (
