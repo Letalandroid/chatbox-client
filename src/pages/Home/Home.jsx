@@ -15,9 +15,12 @@ const Home = () => {
 
 	useEffect(() => {
 		const returnData = async () => {
-			const rawResponse = await fetch(`${import.meta.env.VITE_APP_PROD}/messages`, {
-				method: 'GET',
-			});
+			const rawResponse = await fetch(
+				`${import.meta.env.VITE_VERCEL_PROD}/messages`,
+				{
+					method: 'GET',
+				}
+			);
 
 			const { err, message, messages } = await rawResponse.json();
 
@@ -79,7 +82,7 @@ const Home = () => {
 
 	const sendMessage = async () => {
 		const rawResponse = await fetch(
-			`${import.meta.env.VITE_APP_PROD}/new-message`,
+			`${import.meta.env.VITE_VERCEL_PROD}/new-message`,
 			{
 				method: 'POST',
 				headers: {
