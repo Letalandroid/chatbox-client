@@ -139,40 +139,7 @@ const Home = () => {
 			</header>
 			<div className={styles.container}>
 				<div className={styles.messages}>
-					<Chat message={'test'} uFisrtCharacter={'User'} />
-					<Chat message={'test'} uFisrtCharacter={'User'} />
-					<Chat message={'test'} uFisrtCharacter={'User'} />
-					<Chat message={'test'} uFisrtCharacter={'User'} />
-					<Chat message={'test'} uFisrtCharacter={'User'} />
-					<Chat message={'test'} uFisrtCharacter={'User'} />
-					<Chat message={'test'} uFisrtCharacter={'User'} />
-					<Chat message={'test'} uFisrtCharacter={'User'} />
-					<Chat message={'test'} uFisrtCharacter={'User'} />
-					<Chat message={'test'} uFisrtCharacter={'User'} />
-					<Chat message={'test'} uFisrtCharacter={'User'} />
-					<Chat message={'test'} uFisrtCharacter={'User'} />
-					<Chat message={'test'} uFisrtCharacter={'User'} />
-					<Chat message={'test'} uFisrtCharacter={'User'} />
-				</div>
-				<div className={styles.sendMessage__container}>
-					<input
-						type="text"
-						placeholder="Send your message here..."
-						maxLength={100}
-						onChange={(e) => setMsj(e.target.value)}
-					/>
-					<button onClick={sendMessage}>
-						<i className="fas fa-paper-plane"></i>
-					</button>
-				</div>
-			</div>
-			<ToastContainer />
-		</>
-	);
-};
-
-{
-	/* {cargando ? (
+					{cargando ? (
 						<h2>Cargando chats...</h2>
 					) : (
 						mensajes.map((mensaje) => {
@@ -192,7 +159,23 @@ const Home = () => {
 								/>
 							);
 						})
-					)} */
-}
+					)}
+				</div>
+				<div className={styles.sendMessage__container}>
+					<input
+						type="text"
+						placeholder="Send your message here..."
+						maxLength={100}
+						onChange={(e) => setMsj(e.target.value)}
+					/>
+					<button onClick={sendMessage}>
+						<i className="fas fa-paper-plane"></i>
+					</button>
+				</div>
+			</div>
+			<ToastContainer />
+		</>
+	);
+};
 
 export default Home;
