@@ -70,7 +70,7 @@ const Home = () => {
 				location.href = '/login';
 			}, 1000);
 		}
-	}, 1000 * 60 * 1);
+	}, 1000 * 60);
 
 	setInterval(() => {
 		fetch(
@@ -80,7 +80,7 @@ const Home = () => {
 					: import.meta.env.VITE_APP_PROD
 			}/new-message`
 		);
-	}, 1000 * 60);
+	}, 1000 * 20);
 
 	const handleSes = () => {
 		handleSession ? setHandleSession(false) : setHandleSession(true);
