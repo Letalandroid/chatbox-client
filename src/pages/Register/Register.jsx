@@ -68,15 +68,18 @@ const Register = () => {
 	};
 
 	const fetchData = async (username, password) => {
-		const rawResponse = await fetch(`${import.meta.env.PROD}/register`, {
-			method: 'POST',
-			headers: {
-				'Access-Control-Allow-Origin': '*',
-				'Content-Type': 'application/json',
-				'Access-Control-Allow-Credentials': 'true',
-			},
-			body: JSON.stringify({ username, password }),
-		});
+		const rawResponse = await fetch(
+			`${import.meta.env.VITE_APP_PROD}/register`,
+			{
+				method: 'POST',
+				headers: {
+					'Access-Control-Allow-Origin': '*',
+					'Content-Type': 'application/json',
+					'Access-Control-Allow-Credentials': 'true',
+				},
+				body: JSON.stringify({ username, password }),
+			}
+		);
 
 		const data = await rawResponse.json();
 

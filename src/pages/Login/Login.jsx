@@ -62,7 +62,7 @@ const Login = () => {
 	};
 
 	const fetchData = async (username, password) => {
-		const rawResponse = await fetch(`${import.meta.env.PROD}/login`, {
+		const rawResponse = await fetch(`${import.meta.env.VITE_APP_PROD}/login`, {
 			method: 'POST',
 			headers: {
 				'Access-Control-Allow-Origin': '*',

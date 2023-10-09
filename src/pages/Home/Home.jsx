@@ -78,19 +78,22 @@ const Home = () => {
 	};
 
 	const sendMessage = async () => {
-		const rawResponse = await fetch(`${import.meta.env.PROD}/new-message`, {
-			method: 'POST',
-			headers: {
-				'Access-Control-Allow-Origin': '*',
-				'Content-Type': 'application/json',
-				'Access-Control-Allow-Credentials': 'true',
-			},
-			body: JSON.stringify({
-				user_id: token.user_id,
-				username: token.username,
-				msj,
-			}),
-		});
+		const rawResponse = await fetch(
+			`${import.meta.env.VITE_APP_PROD}/new-message`,
+			{
+				method: 'POST',
+				headers: {
+					'Access-Control-Allow-Origin': '*',
+					'Content-Type': 'application/json',
+					'Access-Control-Allow-Credentials': 'true',
+				},
+				body: JSON.stringify({
+					user_id: token.user_id,
+					username: token.username,
+					msj,
+				}),
+			}
+		);
 
 		const { err, message } = await rawResponse.json();
 
