@@ -138,28 +138,30 @@ const Home = () => {
 				)}
 			</header>
 			<div className={styles.container}>
-				<div className={styles.messages}>
-					{cargando ? (
-						<h2>Cargando chats...</h2>
-					) : (
-						mensajes.map((mensaje) => {
-							let you;
-							const existToken = token !== undefined;
+				<div className={styles.messages__container}>
+					<div className={styles.messages}>
+						{cargando ? (
+							<h2>Cargando chats...</h2>
+						) : (
+							mensajes.map((mensaje) => {
+								let you;
+								const existToken = token !== undefined;
 
-							if (existToken) {
-								you = mensaje.user_id === token.user_id;
-							}
+								if (existToken) {
+									you = mensaje.user_id === token.user_id;
+								}
 
-							return (
-								<Chat
-									key={mensaje.chat_id}
-									uFisrtCharacter={mensaje.username}
-									message={mensaje.text}
-									you={you}
-								/>
-							);
-						})
-					)}
+								return (
+									<Chat
+										key={mensaje.chat_id}
+										uFisrtCharacter={mensaje.username}
+										message={mensaje.text}
+										you={you}
+									/>
+								);
+							})
+						)}
+					</div>
 				</div>
 				<div className={styles.sendMessage__container}>
 					<input

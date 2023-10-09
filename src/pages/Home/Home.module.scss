@@ -140,17 +140,30 @@ body {
 		}
 	}
 
-	.messages {
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-        width: 100%;
-		height: 74vh;
-		margin: 40px 30px;
-		overflow: auto;
+	.messages__container {
+		width: 100%;
 
-		h2 {
-			color: #fff;
+		.messages {
+			display: flex;
+			flex-direction: column;
+			gap: 40px;
+			height: 68vh;
+			padding: 40px 20px;
+			overflow: auto;
+
+
+			&::-webkit-scrollbar {
+				width: 6px;
+				background: transparent;
+			}
+			&::-webkit-scrollbar-thumb {
+				background: v.$color-secundary;
+				border-radius: 30px;
+			}
+
+			h2 {
+				color: #fff;
+			}
 		}
 	}
 }
