@@ -1,0 +1,28 @@
+@use '../../sass/variables' as v;
+
+.container__label {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+    label {
+        font: {
+            weight: bold;
+            size: 18px;
+        };
+        text-transform: capitalize;
+    }
+
+    input {
+        height: 35px;
+        border: 3px solid v.$color-gray;
+        border-radius: 6px;
+        padding-left: 10px;
+        color: v.$color-gray;
+
+        font: {
+            size: 16px;
+            weight:  bold;
+        };
+    }
+}

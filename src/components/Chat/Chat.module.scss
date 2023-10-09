@@ -1,0 +1,70 @@
+@use '../../sass/_variables' as v;
+
+.chat__container {
+	display: flex;
+    justify-content: left;
+	gap: 10px;
+
+	.userIcon__container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 50px;
+		height: 50px;
+		cursor: pointer;
+		border-radius: 50%;
+		background-color: #636cef;
+
+		span {
+			color: #fff;
+			font: {
+				size: 20px;
+				weight: bold;
+			}
+			text-transform: capitalize;
+		}
+	}
+
+	.message {
+        width: 100px;
+        padding: 15px;
+		color: #fff;
+		background-color: v.$color-secundary;
+	}
+}
+
+.you__container {
+	display: flex;
+    justify-content: right;
+	gap: 10px;
+	flex-direction: row-reverse;
+	justify-content: right;
+
+	.userIconYou__container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 50px;
+		height: 50px;
+		cursor: pointer;
+		border-radius: 50%;
+		background-color: #49d06f;
+
+		span {
+			color: #fff;
+			font: {
+				size: 20px;
+				weight: bold;
+			}
+			text-transform: capitalize;
+		}
+	}
+
+	.message {
+        width: 100px;
+        padding: 15px;
+		color: #fff;
+		background-color: v.$color-secundary;
+		text-align: right;
+	}
+}

@@ -1,0 +1,155 @@
+@use '../../sass/_variables' as v;
+
+body {
+	background-color: v.$color-primary;
+}
+
+.header {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: v.$color-secundary;
+	padding: 15px;
+
+	h1 {
+		color: #fff;
+		font-size: 26px;
+	}
+
+	.userIcon__container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 40px;
+		height: 40px;
+		cursor: pointer;
+		border: 3px solid #fff;
+		border-radius: 50%;
+
+		&:hover {
+			background-color: #fff;
+		}
+
+		span {
+			color: #fff;
+			font: {
+				size: 20px;
+				weight: bold;
+			}
+			text-transform: capitalize;
+
+			&:hover {
+				color: v.$color-secundary;
+			}
+		}
+	}
+
+	.closedSession {
+		position: absolute;
+		right: 60px;
+		top: 50px;
+		z-index: 5;
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+		justify-content: center;
+		border: 2px solid #424242;
+		padding: 10px;
+		background-color: v.$color-secundary;
+		border-radius: 6px;
+
+		span {
+			max-width: 90px;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			color: #fff;
+			text-align: right;
+		}
+
+		button {
+			cursor: pointer;
+			border: none;
+			outline: none;
+			font-weight: bold;
+			color: #fff;
+			background-color: #f00;
+			padding: 10px;
+			border-radius: 3px;
+			transition: 0.5s background-color;
+
+			&:hover {
+				background-color: #c40000;
+			}
+		}
+	}
+}
+
+.container {
+	display: flex;
+	position: relative;
+	justify-content: center;
+	width: 100%;
+	height: calc(100vh - 76px);
+
+	.sendMessage__container {
+		display: flex;
+		gap: 10px;
+		justify-content: center;
+		align-items: center;
+		width: 90vw;
+		position: absolute;
+		bottom: 0;
+		padding: 10px;
+
+		input {
+			width: 85%;
+			border: 4px solid v.$color-secundary;
+			border-radius: 6px;
+			color: #fff;
+			background-color: transparent;
+			padding: 12px;
+
+			&::placeholder {
+				color: #3a366d;
+				font: {
+					size: 16px;
+					weight: bold;
+				}
+			}
+		}
+
+		button {
+			cursor: pointer;
+			width: 47px;
+			height: 47px;
+			background-color: v.$color-secundary;
+			border: 0;
+			border-radius: 3px;
+			transition: 0.1s border;
+
+			&:hover {
+				border: 3px solid #fff;
+			}
+
+			i {
+				color: #fff;
+				font-size: 14px;
+			}
+		}
+	}
+
+	.messages {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+		margin: 20px 30px;
+        scroll-behavior: auto;
+
+		h2 {
+			color: #fff;
+		}
+	}
+}
