@@ -69,11 +69,16 @@ const Home = () => {
 			setTimeout(() => {
 				location.href = '/login';
 			}, 1000);
+		} else {
+			fetch(
+				`${
+					import.meta.env.PROD
+						? import.meta.env.VITE_VERCEL_PROD
+						: import.meta.env.VITE_APP_PROD
+				}/new-message`
+			);
 		}
 	}, 1000 * 60 * 1);
-	{
-		/* ms * s * m */
-	}
 
 	const handleSes = () => {
 		handleSession ? setHandleSession(false) : setHandleSession(true);
