@@ -69,7 +69,11 @@ const Register = () => {
 
 	const fetchData = async (username, password) => {
 		const rawResponse = await fetch(
-			`${import.meta.env.VITE_VERCEL_PROD}/register`,
+			`${
+				import.meta.env.PROD
+					? import.meta.env.VITE_VERCEL_PROD
+					: import.meta.env.VITE_APP_PROD
+			}/login`,
 			{
 				method: 'POST',
 				headers: {

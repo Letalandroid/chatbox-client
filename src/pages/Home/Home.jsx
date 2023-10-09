@@ -16,7 +16,11 @@ const Home = () => {
 	useEffect(() => {
 		const returnData = async () => {
 			const rawResponse = await fetch(
-				`${import.meta.env.VITE_VERCEL_PROD}/messages`,
+				`${
+					import.meta.env.PROD
+						? import.meta.env.VITE_VERCEL_PROD
+						: import.meta.env.VITE_APP_PROD
+				}/messages`,
 				{
 					method: 'GET',
 				}
@@ -82,7 +86,11 @@ const Home = () => {
 
 	const sendMessage = async () => {
 		const rawResponse = await fetch(
-			`${import.meta.env.VITE_VERCEL_PROD}/new-message`,
+			`${
+				import.meta.env.PROD
+					? import.meta.env.VITE_VERCEL_PROD
+					: import.meta.env.VITE_APP_PROD
+			}/new-message`,
 			{
 				method: 'POST',
 				headers: {
@@ -131,7 +139,40 @@ const Home = () => {
 			</header>
 			<div className={styles.container}>
 				<div className={styles.messages}>
-					{cargando ? (
+					<Chat message={'test'} uFisrtCharacter={'User'} />
+					<Chat message={'test'} uFisrtCharacter={'User'} />
+					<Chat message={'test'} uFisrtCharacter={'User'} />
+					<Chat message={'test'} uFisrtCharacter={'User'} />
+					<Chat message={'test'} uFisrtCharacter={'User'} />
+					<Chat message={'test'} uFisrtCharacter={'User'} />
+					<Chat message={'test'} uFisrtCharacter={'User'} />
+					<Chat message={'test'} uFisrtCharacter={'User'} />
+					<Chat message={'test'} uFisrtCharacter={'User'} />
+					<Chat message={'test'} uFisrtCharacter={'User'} />
+					<Chat message={'test'} uFisrtCharacter={'User'} />
+					<Chat message={'test'} uFisrtCharacter={'User'} />
+					<Chat message={'test'} uFisrtCharacter={'User'} />
+					<Chat message={'test'} uFisrtCharacter={'User'} />
+				</div>
+				<div className={styles.sendMessage__container}>
+					<input
+						type="text"
+						placeholder="Send your message here..."
+						maxLength={100}
+						onChange={(e) => setMsj(e.target.value)}
+					/>
+					<button onClick={sendMessage}>
+						<i className="fas fa-paper-plane"></i>
+					</button>
+				</div>
+			</div>
+			<ToastContainer />
+		</>
+	);
+};
+
+{
+	/* {cargando ? (
 						<h2>Cargando chats...</h2>
 					) : (
 						mensajes.map((mensaje) => {
@@ -151,23 +192,7 @@ const Home = () => {
 								/>
 							);
 						})
-					)}
-				</div>
-				<div className={styles.sendMessage__container}>
-					<input
-						type="text"
-						placeholder="Send your message here..."
-						maxLength={100}
-						onChange={(e) => setMsj(e.target.value)}
-					/>
-					<button onClick={sendMessage}>
-						<i className="fas fa-paper-plane"></i>
-					</button>
-				</div>
-			</div>
-			<ToastContainer />
-		</>
-	);
-};
+					)} */
+}
 
 export default Home;
