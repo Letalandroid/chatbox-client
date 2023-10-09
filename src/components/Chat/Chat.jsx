@@ -11,6 +11,11 @@ const Chat = ({ uFisrtCharacter, message, you }) => {
 					<span>{uFisrtCharacter.charAt(0)}</span>
 				</div>
 				<div className={styles.message}>
+					{you ? (
+						<span className={styles.username}>Tú</span>
+					) : (
+						<span className={styles.username}>{uFisrtCharacter}:</span>
+					)}
 					<span>{message}</span>
 				</div>
 			</div>

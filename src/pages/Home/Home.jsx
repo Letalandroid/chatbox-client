@@ -15,7 +15,7 @@ const Home = () => {
 
 	useEffect(() => {
 		const returnData = async () => {
-			const rawResponse = await fetch('http://localhost:3000/messages', {
+			const rawResponse = await fetch(`${import.meta.env.VITE_APP_PROD}/messages`, {
 				method: 'GET',
 			});
 

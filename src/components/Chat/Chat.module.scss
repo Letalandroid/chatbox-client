@@ -26,10 +26,18 @@
 	}
 
 	.message {
+		position: relative;
         width: 100px;
         padding: 15px;
 		color: #fff;
 		background-color: v.$color-secundary;
+
+		.username {
+			position: absolute;
+			top: -25px;
+			left: 5px;
+			font-weight: bold;
+		}
 	}
 }
 
@@ -61,10 +69,18 @@
 	}
 
 	.message {
+		position: relative;
         width: 100px;
         padding: 15px;
 		color: #fff;
 		background-color: v.$color-secundary;
 		text-align: right;
+
+		.username {
+			position: absolute;
+			top: -25px;
+			right: 5px;
+			font-weight: bold;
+		}
 	}
 }
